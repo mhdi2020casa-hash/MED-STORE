@@ -95,12 +95,11 @@
                 </div>
             </div>
             <div class="relative flex justify-center">
-                <div class="w-full max-w-md h-80 rounded-2xl bg-gradient-to-tr from-neoncyan/20 to-neonpurple/20 border border-gray-800 p-4 relative flex items-center justify-center neon-glow">
-                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neoncyan/10 via-transparent to-transparent"></div>
-                    <i class="fa-solid fa-headset text-9xl text-neoncyan animate-pulse"></i>
+                <div class="w-full max-w-md h-80 rounded-2xl bg-gradient-to-tr from-neoncyan/20 to-neonpurple/20 border border-gray-800 p-4 relative flex items-center justify-center neon-glow overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Gaming Setup" class="w-full h-full object-cover rounded-xl opacity-80 hover:scale-105 transition duration-500">
                     <div class="absolute bottom-4 left-4 bg-darkbg/90 border border-gray-800 px-4 py-2 rounded-xl backdrop-blur">
-                        <span class="block text-xs text-gray-400 font-orbitron">Featured Product</span>
-                        <span class="font-bold text-white text-sm">Nexus Void Wireless 7.1</span>
+                        <span class="block text-xs text-gray-400 font-orbitron">Featured Setup</span>
+                        <span class="font-bold text-white text-sm">Nexus Pro RGB Setup</span>
                     </div>
                 </div>
             </div>
@@ -134,7 +133,7 @@
     <!-- QUICK VIEW MODAL -->
     <div id="quickViewModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
         <div class="bg-cardbg border border-gray-800 w-full max-w-2xl rounded-2xl p-6 relative neon-glow">
-            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div id="modalContent" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
@@ -191,71 +190,71 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Products Database
+        // Products Database with Real HD Images
         const products = [
             {
                 id: 1,
                 name: "Nexus Phantom Pro",
                 category: "Claviers",
                 price: 899,
-                image: "fa-keyboard",
-                specs: "Mechanical Switches Optical, RGB Per-Key, Hot-Swappable, Latency 0.1ms"
+                image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
+                specs: "Switches optiques ultra-rapides, Rétroéclairage RGB touche par touche, Châssis alu."
             },
             {
                 id: 2,
                 name: "Viper Edge Wireless",
                 category: "Souris",
                 price: 649,
-                image: "fa-computer-mouse",
-                specs: "Sensor 30K DPI, Ultra-light 54g, Dual Wireless 2.4GHz & Bluetooth"
+                image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80",
+                specs: "Capteur 30K DPI, Ultra-légère 54g, Sans fil 2.4GHz & Bluetooth sans latence."
             },
             {
                 id: 3,
                 name: "Nexus Void 7.1",
                 category: "Audio",
                 price: 799,
-                image: "fa-headset",
-                specs: "Spatial Sound 7.1, Driver 50mm Neodymium, Micro antibruit detachable"
+                image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=600&q=80",
+                specs: "Son Surround 7.1 spatialisé, Transducteurs 50mm Neodymium, Micro à réduction de bruit."
             },
             {
                 id: 4,
                 name: "RGB CyberMat XL",
                 category: "Accessoires",
                 price: 299,
-                image: "fa-layer-group",
-                specs: "Surface micro-tissée imperméable, 14 modes d'éclairage RGB, Base antidérapante"
+                image: "https://images.unsplash.com/photo-1616440342981-b5103a8d9e29?auto=format&fit=crop&w=600&q=80",
+                specs: "Surface micro-tissée imperméable, 14 modes d'éclairage RGB, Base en caoutchouc antidérapante."
             },
             {
                 id: 5,
                 name: "Apex Cyber Key",
                 category: "Claviers",
                 price: 1199,
-                image: "fa-keyboard",
-                specs: "Châssis en aluminium aéronautique, Switches Magnétiques Ajustables"
+                image: "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=600&q=80",
+                specs: "Design compact 60%, Switches magnétiques réglables, Câble tressé détachable."
             },
             {
                 id: 6,
                 name: "Shadow Claw X",
                 category: "Souris",
                 price: 499,
-                image: "fa-computer-mouse",
-                specs: "16000 DPI, Ergonomie palm/claw grip, 8 boutons programmables"
+                image: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80",
+                specs: "Capteur optique 16000 DPI, Forme ergonomique, 8 boutons configurables."
             },
             {
                 id: 7,
                 name: "Wave Pulse Mic",
                 category: "Audio",
                 price: 950,
-                image: "fa-microphone",
-                specs: "USB Condenser Studio Grade, Mute tactile, Anti-pop intégré"
+                image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
+                specs: "Microphone statique USB qualité studio, Bouton Mute tactile, Filtre anti-pop intégré."
             },
             {
                 id: 8,
                 name: "Nexus Stand RGB",
                 category: "Accessoires",
                 price: 250,
-                image: "fa-tower-broadcast",
-                specs: "Support casque avec Hub USB 3.0 et éclairage RGB dynamique"
+                image: "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80",
+                specs: "Support de casque robuste avec Hub USB 3.0 (2 ports) et illumination RGB personnalisable."
             }
         ];
 
@@ -282,9 +281,9 @@
                 grid.innerHTML += `
                     <div class="bg-cardbg border border-gray-800 hover:border-neoncyan rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 group neon-glow-hover">
                         <div>
-                            <div class="w-full h-48 rounded-xl bg-darkbg border border-gray-900 flex items-center justify-center relative mb-4 overflow-hidden group-hover:border-neoncyan/50 transition">
-                                <i class="fa-solid ${p.image} text-6xl text-neoncyan group-hover:scale-110 transition duration-300"></i>
-                                <span class="absolute top-3 left-3 bg-darkbg/80 border border-gray-800 text-[10px] font-orbitron px-2 py-1 rounded text-neoncyan">${p.category}</span>
+                            <div class="w-full h-48 rounded-xl bg-darkbg border border-gray-900 relative mb-4 overflow-hidden group-hover:border-neoncyan/50 transition">
+                                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                                <span class="absolute top-3 left-3 bg-darkbg/90 border border-gray-800 text-[10px] font-orbitron px-2 py-1 rounded text-neoncyan backdrop-blur">${p.category}</span>
                             </div>
                             <h3 class="font-orbitron font-bold text-white text-base mb-1">${p.name}</h3>
                             <p class="text-xs text-gray-400 line-clamp-2 mb-4">${p.specs}</p>
@@ -368,9 +367,7 @@
                 listEl.innerHTML += `
                     <div class="flex items-center justify-between bg-darkbg p-3 rounded-xl border border-gray-800">
                         <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 bg-cardbg rounded-lg border border-gray-800 flex items-center justify-center text-neoncyan">
-                                <i class="fa-solid ${item.image}"></i>
-                            </div>
+                            <img src="${item.image}" alt="${item.name}" class="w-10 h-10 object-cover rounded-lg border border-gray-800">
                             <div>
                                 <h4 class="font-orbitron font-bold text-white text-xs">${item.name}</h4>
                                 <span class="text-neoncyan text-xs font-bold">${item.price} MAD</span>
@@ -406,9 +403,9 @@
             const content = document.getElementById('modalContent');
 
             content.innerHTML = `
-                <div class="w-full h-64 bg-darkbg border border-gray-800 rounded-xl flex items-center justify-center text-neoncyan relative">
-                    <i class="fa-solid ${product.image} text-8xl"></i>
-                    <span class="absolute top-3 left-3 bg-cardbg px-2 py-1 rounded text-xs font-orbitron border border-gray-800">${product.category}</span>
+                <div class="w-full h-64 bg-darkbg border border-gray-800 rounded-xl relative overflow-hidden">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-cardbg/90 px-2 py-1 rounded text-xs font-orbitron border border-gray-800 text-neoncyan backdrop-blur">${product.category}</span>
                 </div>
                 <div class="space-y-4">
                     <h3 class="font-orbitron font-black text-xl text-white">${product.name}</h3>
@@ -461,7 +458,7 @@
             message += `%0A💰 *TOTAL:* *${total} MAD*%0A`;
             message += `🚚 *Paiement à la livraison (COD)*`;
 
-            // Numéro WhatsApp (Baddlo b numro dyalk)
+            // Remplace par ton numéro WhatsApp marocain
             const whatsappNumber = "212600000000"; 
             const url = `https://wa.me/${whatsappNumber}?text=${message}`;
             window.open(url, '_blank');
