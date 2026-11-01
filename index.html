@@ -426,7 +426,7 @@
             modal.classList.add('hidden');
         }
 
-        // WhatsApp Checkout
+        // WhatsApp Checkout avec ton numéro 0702418961 -> 212702418961
         function checkoutWhatsApp() {
             if (cart.length === 0) {
                 alert("Votre panier est vide !");
@@ -458,8 +458,7 @@
             message += `%0A💰 *TOTAL:* *${total} MAD*%0A`;
             message += `🚚 *Paiement à la livraison (COD)*`;
 
-            // Remplace par ton numéro WhatsApp marocain
-            const whatsappNumber = "212600000000"; 
+            const whatsappNumber = "212702418961"; 
             const url = `https://wa.me/${whatsappNumber}?text=${message}`;
             window.open(url, '_blank');
         }
