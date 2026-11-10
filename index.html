@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>متجر رشمات الطرز المبيكين | TARZ MBIKINE</title>
+  
+  <!-- Open Graph Meta Tags (باش تطلع الصورة والعنوان ملي تصيفط رابط الموقع فـ الواتساب/فيسبوك) -->
+  <meta property="og:title" content="TARZ MBIKINE | متجر رشمات الطرز المبيكين">
+  <meta property="og:description" content="أفضل رشمات الطرز المبيكين جاهزة للتحميل والتطريز المباشر">
+  <meta property="og:image" content="https://mhdi2020casa-hash.github.io/MED-STORE/rashma2.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (أيقونة الموقع فالمتصفح) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23121212%22 stroke=%22%23D4AF37%22 stroke-width=%225%22/><text x=%2250%%22 y=%2257%%22 font-size=%2240%22 font-weight=%22900%22 fill=%22%23FBBF24%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 font-family=%22sans-serif%22>MD</text></svg>">
+
   <!-- Google Fonts & Tailwind CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,8 +67,9 @@
   <header class="border-b border-zinc-800 bg-brand-dark/90 backdrop-blur sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full border border-yellow-600/50 flex items-center justify-center bg-zinc-900">
-          <span class="text-xl font-black text-amber-400">TM</span>
+        <!-- Logo بدّلناه لـ MD -->
+        <div class="w-10 h-10 rounded-full border border-yellow-600/50 flex items-center justify-center bg-zinc-900 shadow-md">
+          <span class="text-lg font-black text-amber-400 tracking-tighter">MD</span>
         </div>
         <div>
           <h1 class="text-2xl font-black tracking-wide gold-gradient">TARZ MBIKINE</h1>
@@ -122,15 +134,15 @@
   <!-- App Data & Scripts -->
   <script>
     // -------------------------------------------------------------
-    // CONFIGURATION: بدّل هذا الرقم برقم الواتساب الخاص بك (مع رمز الدولة)
+    // CONFIGURATION: رقم الواتساب الخاص بك
     // -------------------------------------------------------------
-    const WHATSAPP_NUMBER = "0702418961"; 
+    const WHATSAPP_NUMBER = "212702418961"; 
 
-    // قائمة الرشمات - يمكنك التعديل والإضافة عليها بكل سهولة
+    // قائمة الرشمات
     const products = [
       {
         id: 1,
-        title: "رشمة DST مبيكين ",
+        title: "رشمة DST مبيكين",
         category: "جلابة",
         price: 50,
         image: "rashma2.jpg",
@@ -138,7 +150,7 @@
       },
       {
         id: 2,
-        title: " رشمة مبيكين ملكية DTS",
+        title: "رشمة مبيكين ملكية DTS",
         category: "قفطان",
         price: 50,
         image: "rashma3.jpg",
