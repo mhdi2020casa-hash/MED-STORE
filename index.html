@@ -1,470 +1,271 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS GEAR | Pro Gaming Arsenal</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkbg: '#050508',
-                        cardbg: '#0c0c14',
-                        neoncyan: '#00f0ff',
-                        neonpurple: '#b000ff',
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر رشمات الطرز المبيكين | TARZ MBIKINE</title>
+  <!-- Google Fonts & Tailwind CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              dark: '#0A0A0A',
+              card: '#121212',
+              accent: '#1E1E1E'
             }
+          }
         }
-    </script>
-    <!-- Google Fonts: Orbitron & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .font-orbitron { font-family: 'Orbitron', sans-serif; }
-        .neon-glow { box-shadow: 0 0 20px rgba(0, 240, 255, 0.2); }
-        .neon-glow-hover:hover { box-shadow: 0 0 25px rgba(0, 240, 255, 0.4); }
-        .neon-text { text-shadow: 0 0 10px rgba(0, 240, 255, 0.6); }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #0A0A0A;
+      color: #E5E5E5;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #997A15 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-btn {
+      background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+      transition: all 0.3s ease;
+    }
+    .gold-btn:hover {
+      background: linear-gradient(135deg, #E6C247 0%, #C4971A 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+  </style>
 </head>
-<body class="bg-darkbg text-gray-100 min-h-screen flex flex-col selection:bg-neoncyan selection:text-black">
+<body class="min-h-screen flex flex-col justify-between">
 
-    <!-- HEADER / NAVBAR -->
-    <header class="sticky top-0 z-40 backdrop-blur-md bg-darkbg/80 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="filterCategory('all')">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neoncyan to-neonpurple flex items-center justify-center neon-glow">
-                    <i class="fa-solid fa-gamepad text-black text-xl font-bold"></i>
-                </div>
-                <div>
-                    <span class="font-orbitron font-black text-xl tracking-wider text-white">NEXUS<span class="text-neoncyan">GEAR</span></span>
-                    <span class="block text-[10px] tracking-widest text-gray-400 font-orbitron">PRO GAMING ARSENAL</span>
-                </div>
-            </div>
-
-            <!-- Search Bar -->
-            <div class="hidden md:flex flex-1 max-w-md mx-8">
-                <div class="relative w-full">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-gray-400">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </span>
-                    <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Rechercher clavier, souris, casque..." class="w-full bg-cardbg border border-gray-800 rounded-full pl-11 pr-4 py-2 text-sm text-white focus:outline-none focus:border-neoncyan transition">
-                </div>
-            </div>
-
-            <!-- Cart Trigger Button -->
-            <div class="flex items-center space-x-4">
-                <button onclick="toggleCart()" class="relative bg-cardbg border border-gray-800 hover:border-neoncyan text-white p-3 rounded-xl transition flex items-center space-x-2">
-                    <i class="fa-solid fa-cart-shopping text-neoncyan text-lg"></i>
-                    <span class="hidden sm:inline text-xs font-orbitron">Panier</span>
-                    <span id="cartCount" class="absolute -top-2 -right-2 bg-neoncyan text-black font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center shadow-lg">0</span>
-                </button>
-            </div>
+  <!-- Header Section -->
+  <header class="border-b border-zinc-800 bg-brand-dark/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-yellow-600/50 flex items-center justify-center bg-zinc-900">
+          <span class="text-xl font-black text-amber-400">TM</span>
         </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-darkbg via-[#080812] to-darkbg border-b border-gray-900">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neoncyan/10 border border-neoncyan/30 text-neoncyan text-xs font-orbitron">
-                    <i class="fa-solid fa-bolt"></i>
-                    <span>NEW GENERATION ESPORTS GEAR</span>
-                </div>
-                <h1 class="font-orbitron text-4xl sm:text-6xl font-black tracking-tight text-white leading-none">
-                    DOMINEZ LE <span class="text-neoncyan neon-text">JEU</span> AVEC STYLE.
-                </h1>
-                <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
-                    Matériel gaming haut de gamme au Maroc. Switches optiques ultra-rapides, capteurs 30K DPI et éclairage RGB immersif.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                    <a href="#shop" class="bg-neoncyan text-black font-orbitron font-bold px-8 py-4 rounded-xl hover:bg-cyan-400 transition shadow-lg shadow-neoncyan/20 text-center">
-                        VOIR LE CATALOGUE
-                    </a>
-                    <div class="flex items-center justify-center space-x-6 px-4 py-2 text-gray-400 text-sm font-medium">
-                        <div><i class="fa-solid fa-truck-fast text-neoncyan mr-2"></i>Livraison 48h (Maroc)</div>
-                        <div><i class="fa-solid fa-shield-halved text-neoncyan mr-2"></i>Garantie 1 An</div>
-                    </div>
-                </div>
-            </div>
-            <div class="relative flex justify-center">
-                <div class="w-full max-w-md h-80 rounded-2xl bg-gradient-to-tr from-neoncyan/20 to-neonpurple/20 border border-gray-800 p-4 relative flex items-center justify-center neon-glow overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Gaming Setup" class="w-full h-full object-cover rounded-xl opacity-80 hover:scale-105 transition duration-500">
-                    <div class="absolute bottom-4 left-4 bg-darkbg/90 border border-gray-800 px-4 py-2 rounded-xl backdrop-blur">
-                        <span class="block text-xs text-gray-400 font-orbitron">Featured Setup</span>
-                        <span class="font-bold text-white text-sm">Nexus Pro RGB Setup</span>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h1 class="text-2xl font-black tracking-wide gold-gradient">TARZ MBIKINE</h1>
+          <p class="text-xs text-zinc-400">متجر رشمات الطرز المبيكين الاحترافية</p>
         </div>
-    </section>
+      </div>
 
-    <!-- MAIN SHOP SECTION -->
-    <main id="shop" class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-        
-        <!-- Category Filters -->
-        <div class="flex items-center justify-between flex-wrap gap-4 mb-8">
-            <h2 class="font-orbitron text-2xl font-bold text-white flex items-center">
-                <span class="w-3 h-3 bg-neoncyan rounded-full inline-block mr-3 shadow-lg shadow-neoncyan"></span>
-                MATÉRIEL DISPONIBLE
-            </h2>
-            <div class="flex flex-wrap gap-2" id="categoryFilters">
-                <button onclick="filterCategory('all')" class="cat-btn px-5 py-2 rounded-xl text-xs font-orbitron font-bold transition bg-neoncyan text-black shadow-md">Tous</button>
-                <button onclick="filterCategory('Claviers')" class="cat-btn px-5 py-2 rounded-xl text-xs font-orbitron font-bold transition bg-cardbg border border-gray-800 text-gray-300 hover:border-neoncyan">Claviers</button>
-                <button onclick="filterCategory('Souris')" class="cat-btn px-5 py-2 rounded-xl text-xs font-orbitron font-bold transition bg-cardbg border border-gray-800 text-gray-300 hover:border-neoncyan">Souris</button>
-                <button onclick="filterCategory('Audio')" class="cat-btn px-5 py-2 rounded-xl text-xs font-orbitron font-bold transition bg-cardbg border border-gray-800 text-gray-300 hover:border-neoncyan">Audio</button>
-                <button onclick="filterCategory('Accessoires')" class="cat-btn px-5 py-2 rounded-xl text-xs font-orbitron font-bold transition bg-cardbg border border-gray-800 text-gray-300 hover:border-neoncyan">Accessoires</button>
-            </div>
-        </div>
+      <!-- Search & Filters -->
+      <div class="flex items-center gap-3 w-full sm:w-auto">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="ابحث عن رشمة..." 
+          class="w-full sm:w-64 bg-zinc-900 border border-zinc-800 text-sm px-4 py-2 rounded-lg focus:outline-none focus:border-amber-500 transition text-zinc-200"
+        >
+      </div>
+    </div>
+  </header>
 
-        <!-- Product Grid -->
-        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Dynamically populated by JS -->
-        </div>
-    </main>
+  <!-- Hero Section -->
+  <section class="py-12 px-4 text-center border-b border-zinc-800/50 bg-gradient-to-b from-zinc-900/50 to-brand-dark">
+    <div class="max-w-3xl mx-auto space-y-4">
+      <span class="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs rounded-full font-bold">
+        تشكيلة حصرية وحداثية
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+        أفضل رشمات <span class="gold-gradient">الطرز المبيكين</span> وجاهزة للتحميل
+      </h2>
+      <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+        اختر الرشمة المناسبة لعملك، واطلبها مباشرة عبر الواتساب لتتوصل بملف التصميم بجودة عالية وسرعة فائقة.
+      </p>
+    </div>
+  </section>
 
-    <!-- QUICK VIEW MODAL -->
-    <div id="quickViewModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="bg-cardbg border border-gray-800 w-full max-w-2xl rounded-2xl p-6 relative neon-glow">
-            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="modalContent" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <!-- Content loaded via JS -->
-            </div>
-        </div>
+  <!-- Main Catalog -->
+  <main class="max-w-6xl mx-auto px-4 py-10 flex-grow w-full">
+    
+    <!-- Category Tabs -->
+    <div class="flex items-center justify-center gap-2 mb-8 flex-wrap" id="categoryFilter">
+      <button onclick="filterCategory('all')" class="cat-btn active px-4 py-1.5 rounded-full text-xs font-bold border border-amber-500 bg-amber-500 text-black transition">الكل</button>
+      <button onclick="filterCategory('جلابة')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-bold border border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 transition">جلابة</button>
+      <button onclick="filterCategory('قفطان')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-bold border border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 transition">قفطان</button>
+      <button onclick="filterCategory('عصري')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-bold border border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-700 transition">عصري</button>
     </div>
 
-    <!-- SLIDE-OVER CART DRAWER -->
-    <div id="cartDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden justify-end transition-opacity duration-300">
-        <div class="bg-cardbg border-l border-gray-800 w-full max-w-md h-full flex flex-col p-6 shadow-2xl relative">
-            <div class="flex items-center justify-between pb-4 border-b border-gray-800">
-                <h3 class="font-orbitron font-bold text-lg text-white flex items-center">
-                    <i class="fa-solid fa-cart-shopping text-neoncyan mr-2"></i> Votre Panier
-                </h3>
-                <button onclick="toggleCart()" class="text-gray-400 hover:text-white text-lg"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            
-            <!-- Cart Items -->
-            <div id="cartItemsList" class="flex-1 overflow-y-auto py-4 space-y-4">
-                <!-- Empty state handled in JS -->
-            </div>
-
-            <!-- Cart Footer & Checkout -->
-            <div class="pt-4 border-t border-gray-800 space-y-4">
-                <div class="flex justify-between items-center text-lg font-bold font-orbitron">
-                    <span class="text-gray-400">Total:</span>
-                    <span id="cartTotal" class="text-neoncyan">0 MAD</span>
-                </div>
-                
-                <!-- Checkout Form -->
-                <div class="space-y-3 bg-darkbg p-4 rounded-xl border border-gray-800">
-                    <h4 class="text-xs font-orbitron font-bold text-gray-300">INFORMATIONS DE LIVRAISON (COD)</h4>
-                    <input type="text" id="clientName" placeholder="Nom complet" class="w-full bg-cardbg border border-gray-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-neoncyan">
-                    <input type="tel" id="clientPhone" placeholder="Téléphone (ex: 06XXXXXXXX)" class="w-full bg-cardbg border border-gray-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-neoncyan">
-                    <input type="text" id="clientCity" placeholder="Ville (ex: Casablanca, Rabat...)" class="w-full bg-cardbg border border-gray-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-neoncyan">
-                </div>
-
-                <button onclick="checkoutWhatsApp()" class="w-full bg-green-500 hover:bg-green-400 text-black font-orbitron font-bold py-3 rounded-xl transition flex items-center justify-center space-x-2 shadow-lg shadow-green-500/20">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                    <span>COMMANDER VIA WHATSAPP</span>
-                </button>
-            </div>
-        </div>
+    <!-- Products Grid -->
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Products will be injected by JavaScript -->
     </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-cardbg border-t border-gray-800 py-8 text-center text-gray-500 text-xs">
-        <div class="max-w-7xl mx-auto px-4 space-y-2">
-            <p class="font-orbitron font-bold text-white text-sm">NEXUS GEAR MOROCCO</p>
-            <p>© 2026 Tous droits réservés. Conçu pour les Pro Gamers.</p>
-        </div>
-    </footer>
+    <!-- Empty State -->
+    <div id="noResults" class="hidden text-center py-16 text-zinc-500">
+      <p class="text-lg">لم يتم العثور على أي رشمة بهذا الاسم.</p>
+    </div>
+  </main>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // Products Database with Real HD Images
-        const products = [
-            {
-                id: 1,
-                name: "Nexus Phantom Pro",
-                category: "Claviers",
-                price: 899,
-                image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
-                specs: "Switches optiques ultra-rapides, Rétroéclairage RGB touche par touche, Châssis alu."
-            },
-            {
-                id: 2,
-                name: "Viper Edge Wireless",
-                category: "Souris",
-                price: 649,
-                image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80",
-                specs: "Capteur 30K DPI, Ultra-légère 54g, Sans fil 2.4GHz & Bluetooth sans latence."
-            },
-            {
-                id: 3,
-                name: "Nexus Void 7.1",
-                category: "Audio",
-                price: 799,
-                image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=600&q=80",
-                specs: "Son Surround 7.1 spatialisé, Transducteurs 50mm Neodymium, Micro à réduction de bruit."
-            },
-            {
-                id: 4,
-                name: "RGB CyberMat XL",
-                category: "Accessoires",
-                price: 299,
-                image: "https://images.unsplash.com/photo-1616440342981-b5103a8d9e29?auto=format&fit=crop&w=600&q=80",
-                specs: "Surface micro-tissée imperméable, 14 modes d'éclairage RGB, Base en caoutchouc antidérapante."
-            },
-            {
-                id: 5,
-                name: "Apex Cyber Key",
-                category: "Claviers",
-                price: 1199,
-                image: "https://images.unsplash.com/photo-1626218174358-7769486c4b79?auto=format&fit=crop&w=600&q=80",
-                specs: "Design compact 60%, Switches magnétiques réglables, Câble tressé détachable."
-            },
-            {
-                id: 6,
-                name: "Shadow Claw X",
-                category: "Souris",
-                price: 499,
-                image: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80",
-                specs: "Capteur optique 16000 DPI, Forme ergonomique, 8 boutons configurables."
-            },
-            {
-                id: 7,
-                name: "Wave Pulse Mic",
-                category: "Audio",
-                price: 950,
-                image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
-                specs: "Microphone statique USB qualité studio, Bouton Mute tactile, Filtre anti-pop intégré."
-            },
-            {
-                id: 8,
-                name: "Nexus Stand RGB",
-                category: "Accessoires",
-                price: 250,
-                image: "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600&q=80",
-                specs: "Support de casque robuste avec Hub USB 3.0 (2 ports) et illumination RGB personnalisable."
-            }
-        ];
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800 bg-zinc-950 py-6 text-center text-xs text-zinc-500">
+    <p>© 2026 TARZ MBIKINE STORE. جميع الحقوق محفوظة.</p>
+  </footer>
 
-        let cart = [];
-        let currentFilter = 'all';
+  <!-- App Data & Scripts -->
+  <script>
+    // -------------------------------------------------------------
+    // CONFIGURATION: بدّل هذا الرقم برقم الواتساب الخاص بك (مع رمز الدولة)
+    // -------------------------------------------------------------
+    const WHATSAPP_NUMBER = "212600000000"; 
 
-        // Render Products
-        function renderProducts(filter = 'all', search = '') {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
+    // قائمة الرشمات - يمكنك التعديل والإضافة عليها بكل سهولة
+    const products = [
+      {
+        id: 1,
+        title: "رشمة مبيكين خفيفة للجلابة",
+        category: "جلابة",
+        price: 50,
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop",
+        desc: "رشمة أنيقة ومتقنة مخصصة لجلابة عصرية، متوفرة بملف جاهز للماكينة."
+      },
+      {
+        id: 2,
+        title: "رشمة قفطان مبيكين ملكية",
+        category: "قفطان",
+        price: 120,
+        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=600&auto=format&fit=crop",
+        desc: "تصميم فاخر وعريض يناسب القفاطين والمناسبات الكبرى بكثافة عالية."
+      },
+      {
+        id: 3,
+        title: "رشمة مبيكين عصري طوق",
+        category: "عصري",
+        price: 70,
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop",
+        desc: "رشمة طوق عصرية ومطلوبة جداً، سهلة التطريز ومناسبة لمختلف الأقمشة."
+      },
+      {
+        id: 4,
+        title: "رشمة أكمام مبيكين دائرية",
+        category: "جلابة",
+        price: 40,
+        image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=600&auto=format&fit=crop",
+        desc: "رشمة خاصة بالأكمام والقب لجلابة تقليدية بروح عصرية."
+      },
+      {
+        id: 5,
+        title: "رشمة قفطان كاملة بالصدر والظهر",
+        category: "قفطان",
+        price: 150,
+        image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop",
+        desc: "طقم رشمة متكامل يشمل الصدر، الظهر والأكمام بجودة وتفاصيل دقيقة."
+      },
+      {
+        id: 6,
+        title: "رشمة مبيكين بلمسة تقليدية",
+        category: "عصري",
+        price: 80,
+        image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop",
+        desc: "دمج احترافي بين الطرز المغربي والمبيكين العصري."
+      }
+    ];
 
-            const filtered = products.filter(p => {
-                const matchesCategory = filter === 'all' || p.category === filter;
-                const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase()) || p.category.toLowerCase().includes(search.toLowerCase());
-                return matchesCategory && matchesSearch;
-            });
+    let currentCategory = 'all';
 
-            if (filtered.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500 font-orbitron">Aucun produit trouvé.</div>`;
-                return;
-            }
+    // Render Products
+    function renderProducts(items) {
+      const grid = document.getElementById('productsGrid');
+      const noResults = document.getElementById('noResults');
 
-            filtered.forEach(p => {
-                grid.innerHTML += `
-                    <div class="bg-cardbg border border-gray-800 hover:border-neoncyan rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 group neon-glow-hover">
-                        <div>
-                            <div class="w-full h-48 rounded-xl bg-darkbg border border-gray-900 relative mb-4 overflow-hidden group-hover:border-neoncyan/50 transition">
-                                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                                <span class="absolute top-3 left-3 bg-darkbg/90 border border-gray-800 text-[10px] font-orbitron px-2 py-1 rounded text-neoncyan backdrop-blur">${p.category}</span>
-                            </div>
-                            <h3 class="font-orbitron font-bold text-white text-base mb-1">${p.name}</h3>
-                            <p class="text-xs text-gray-400 line-clamp-2 mb-4">${p.specs}</p>
-                        </div>
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="font-orbitron font-black text-lg text-neoncyan">${p.price} MAD</span>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2">
-                                <button onclick="openQuickView(${p.id})" class="bg-darkbg border border-gray-800 hover:border-neoncyan text-white text-xs font-orbitron py-2.5 rounded-xl transition">Specs</button>
-                                <button onclick="addToCart(${p.id})" class="bg-neoncyan hover:bg-cyan-400 text-black font-orbitron font-bold text-xs py-2.5 rounded-xl transition shadow-md shadow-neoncyan/20">Acheter</button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
+      if (items.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
 
-        // Filter Handling
-        function filterCategory(category) {
-            currentFilter = category;
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.classList.remove('bg-neoncyan', 'text-black', 'shadow-md');
-                btn.classList.add('bg-cardbg', 'border', 'border-gray-800', 'text-gray-300');
-            });
-            event.target.classList.remove('bg-cardbg', 'border', 'border-gray-800', 'text-gray-300');
-            event.target.classList.add('bg-neoncyan', 'text-black', 'shadow-md');
-            
-            const searchVal = document.getElementById('searchInput').value;
-            renderProducts(category, searchVal);
-        }
+      noResults.classList.add('hidden');
+      grid.innerHTML = items.map(product => {
+        const waMessage = encodeURIComponent(`السلام عليكم، بغيت نشري رشمة: ${product.title} (الثمن: ${product.price} درهم)`);
+        const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
 
-        function handleSearch() {
-            const searchVal = document.getElementById('searchInput').value;
-            renderProducts(currentFilter, searchVal);
-        }
+        return `
+          <div class="bg-brand-card border border-zinc-800/80 rounded-xl overflow-hidden hover:border-amber-500/50 transition duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="relative overflow-hidden h-48 bg-zinc-900">
+                <img 
+                  src="${product.image}" 
+                  alt="${product.title}" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100"
+                >
+                <span class="absolute top-3 right-3 bg-zinc-950/80 backdrop-blur text-amber-400 text-xs font-bold px-2.5 py-1 rounded-md border border-amber-500/30">
+                  ${product.category}
+                </span>
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition">${product.title}</h3>
+                <p class="text-zinc-400 text-xs leading-relaxed mb-4">${product.desc}</p>
+              </div>
+            </div>
 
-        // Cart Logic
-        function toggleCart() {
-            const drawer = document.getElementById('cartDrawer');
-            if (drawer.classList.contains('hidden')) {
-                drawer.classList.remove('hidden');
-                drawer.classList.add('flex');
-            } else {
-                drawer.classList.remove('flex');
-                drawer.classList.add('hidden');
-            }
-        }
+            <div class="p-5 pt-0 flex items-center justify-between gap-4 border-t border-zinc-800/40 mt-auto">
+              <div>
+                <span class="text-xs text-zinc-500 block">الثمن</span>
+                <span class="text-xl font-extrabold text-amber-400">${product.price} <span class="text-xs font-normal">د.م</span></span>
+              </div>
+              <a 
+                href="${waLink}" 
+                target="_blank" 
+                class="gold-btn text-black font-extrabold px-4 py-2.5 rounded-lg text-xs flex items-center gap-2"
+              >
+                <span>طلب عبر واتساب</span>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
 
-        function addToCart(id) {
-            const product = products.find(p => p.id === id);
-            const existing = cart.find(item => item.id === id);
-            if (existing) {
-                existing.qty++;
-            } else {
-                cart.push({ ...product, qty: 1 });
-            }
-            updateCartUI();
-            toggleCart();
-        }
+    // Filter Logic
+    function filterCategory(cat) {
+      currentCategory = cat;
+      
+      // Update Active Button Style
+      document.querySelectorAll('#categoryFilter button').forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-black', 'border-amber-500');
+        btn.classList.add('bg-zinc-900', 'text-zinc-400', 'border-zinc-800');
+      });
+      event.target.classList.remove('bg-zinc-900', 'text-zinc-400', 'border-zinc-800');
+      event.target.classList.add('bg-amber-500', 'text-black', 'border-amber-500');
 
-        function updateCartUI() {
-            const countEl = document.getElementById('cartCount');
-            const listEl = document.getElementById('cartItemsList');
-            const totalEl = document.getElementById('cartTotal');
+      applyFilters();
+    }
 
-            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-            countEl.innerText = totalCount;
+    function applyFilters() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      
+      const filtered = products.filter(p => {
+        const matchesCategory = currentCategory === 'all' || p.category === currentCategory;
+        const matchesSearch = p.title.toLowerCase().includes(searchTerm) || p.desc.toLowerCase().includes(searchTerm);
+        return matchesCategory && matchesSearch;
+      });
 
-            if (cart.length === 0) {
-                listEl.innerHTML = `<div class="text-center py-12 text-gray-500 font-orbitron text-xs">Votre panier est vide.</div>`;
-                totalEl.innerText = "0 MAD";
-                return;
-            }
+      renderProducts(filtered);
+    }
 
-            listEl.innerHTML = '';
-            let totalPrice = 0;
+    // Event Listeners
+    document.getElementById('searchInput').addEventListener('input', applyFilters);
 
-            cart.forEach(item => {
-                totalPrice += item.price * item.qty;
-                listEl.innerHTML += `
-                    <div class="flex items-center justify-between bg-darkbg p-3 rounded-xl border border-gray-800">
-                        <div class="flex items-center space-x-3">
-                            <img src="${item.image}" alt="${item.name}" class="w-10 h-10 object-cover rounded-lg border border-gray-800">
-                            <div>
-                                <h4 class="font-orbitron font-bold text-white text-xs">${item.name}</h4>
-                                <span class="text-neoncyan text-xs font-bold">${item.price} MAD</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 bg-cardbg border border-gray-800 rounded text-white flex items-center justify-center text-xs">-</button>
-                            <span class="text-xs font-bold text-white">${item.qty}</span>
-                            <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 bg-cardbg border border-gray-800 rounded text-white flex items-center justify-center text-xs">+</button>
-                        </div>
-                    </div>
-                `;
-            });
-
-            totalEl.innerText = `${totalPrice} MAD`;
-        }
-
-        function changeQty(id, delta) {
-            const item = cart.find(i => i.id === id);
-            if (item) {
-                item.qty += delta;
-                if (item.qty <= 0) {
-                    cart = cart.filter(i => i.id !== id);
-                }
-            }
-            updateCartUI();
-        }
-
-        // Quick View Modal
-        function openQuickView(id) {
-            const product = products.find(p => p.id === id);
-            const modal = document.getElementById('quickViewModal');
-            const content = document.getElementById('modalContent');
-
-            content.innerHTML = `
-                <div class="w-full h-64 bg-darkbg border border-gray-800 rounded-xl relative overflow-hidden">
-                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
-                    <span class="absolute top-3 left-3 bg-cardbg/90 px-2 py-1 rounded text-xs font-orbitron border border-gray-800 text-neoncyan backdrop-blur">${product.category}</span>
-                </div>
-                <div class="space-y-4">
-                    <h3 class="font-orbitron font-black text-xl text-white">${product.name}</h3>
-                    <p class="text-sm text-gray-400">${product.specs}</p>
-                    <div class="font-orbitron font-black text-2xl text-neoncyan">${product.price} MAD</div>
-                    <button onclick="addToCart(${product.id}); closeQuickView();" class="w-full bg-neoncyan hover:bg-cyan-400 text-black font-orbitron font-bold py-3 rounded-xl transition shadow-lg shadow-neoncyan/20">
-                        Ajouter au Panier
-                    </button>
-                </div>
-            `;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeQuickView() {
-            const modal = document.getElementById('quickViewModal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-        }
-
-        // WhatsApp Checkout avec ton numéro 0702418961 -> 212702418961
-        function checkoutWhatsApp() {
-            if (cart.length === 0) {
-                alert("Votre panier est vide !");
-                return;
-            }
-
-            const name = document.getElementById('clientName').value.trim();
-            const phone = document.getElementById('clientPhone').value.trim();
-            const city = document.getElementById('clientCity').value.trim();
-
-            if (!name || !phone || !city) {
-                alert("Veuillez remplir toutes vos informations de livraison (Nom, Téléphone, Ville).");
-                return;
-            }
-
-            let message = `🛒 *NOUVELLE COMMANDE - NEXUS GEAR*%0A%0A`;
-            message += `👤 *Nom:* ${name}%0A`;
-            message += `📞 *Téléphone:* ${phone}%0A`;
-            message += `🏙️ *Ville:* ${city}%0A%0A`;
-            message += `📦 *Produits:*%0A`;
-
-            let total = 0;
-            cart.forEach(item => {
-                let sub = item.price * item.qty;
-                total += sub;
-                message += `- ${item.name} (x${item.qty}) : ${sub} MAD%0A`;
-            });
-
-            message += `%0A💰 *TOTAL:* *${total} MAD*%0A`;
-            message += `🚚 *Paiement à la livraison (COD)*`;
-
-            const whatsappNumber = "212702418961"; 
-            const url = `https://wa.me/${whatsappNumber}?text=${message}`;
-            window.open(url, '_blank');
-        }
-
-        // Initial render
-        renderProducts();
-    </script>
+    // Initial Render
+    renderProducts(products);
+  </script>
 </body>
 </html>
